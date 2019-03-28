@@ -20,8 +20,9 @@ class HomeController extends Controller {
 
     async logout() {
         const ctx = this.ctx;
-        ctx.logout();
-        ctx.redirect(ctx.get('referer') || '/login');
+        // ctx.logout();
+        ctx.session = null;
+        ctx.redirect('/login');
     }
 
     async login() {
@@ -38,7 +39,8 @@ class HomeController extends Controller {
         if (this.config.user.username == username
             && this.config.user.password == password) {
             console.log("登录成功");
-            ctx.login(loginUser);
+            // ctx.login(loginUser);
+            ctx.session.user = loginUser;
             ctx.redirect('/')
 
         } else {

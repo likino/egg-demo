@@ -10,7 +10,7 @@ module.exports = options => {
         if (ctx.path == '/login') {
             await next();
         } else {
-            if (ctx.isAuthenticated()) {
+            if (ctx.session.user) {
                 await next();
             } else {
                 await ctx.redirect('/login')

@@ -2,7 +2,7 @@
 
 Eggjs  极！简单账号密码登录实例
 
-使用 egg-passport
+使用egg-session
 
 ## QuickStart
 
