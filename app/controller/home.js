@@ -37,7 +37,7 @@ class HomeController extends Controller {
             && this.config.user.password == password) {
             console.log("登录成功");
             ctx.session.user = loginUser;
-            ctx.redirect('/')
+            await ctx.render('index.njk')
 
         } else {
             console.log("用户或者密码,登录失败");
